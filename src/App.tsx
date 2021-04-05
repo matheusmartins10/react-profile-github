@@ -1,13 +1,14 @@
 import React from 'react'
+import SignIn from './pages/SignIn';
 
 import GlobalStyles from './styles/global';
 
 const App = () => {
   return (
-    <div>
+    <>
       <GlobalStyles />
-      Hello App
-    </div>
+      <SignIn />
+    </>
   )
 }
 
