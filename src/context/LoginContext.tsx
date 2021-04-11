@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect, useCallback, useContext } from 'react'
 
+import { useHistory } from 'react-router-dom'
+
 import api from '../services/api'
 
 type SignInProps = {
@@ -13,6 +15,7 @@ type ProfileProps = {
    name: string
    bio: string
    location: string
+   company: string
 }
 
 type LoginContextData = {
@@ -25,6 +28,8 @@ const LoginContext = createContext<LoginContextData>({} as LoginContextData)
 
 export const LoginProvider: React.FC = ({ children }) => {
 
+    const history = useHistory()
+
     const [profile, setProfile] = useState<ProfileProps>(() => {
         const storageProfile = localStorage.getItem('@Github:profile')
 
@@ -32,7 +37,7 @@ export const LoginProvider: React.FC = ({ children }) => {
             return JSON.parse(storageProfile)
         }
 
-        return {}
+        return {} as ProfileProps
     })
 
    useEffect(() => {
@@ -47,6 +52,9 @@ export const LoginProvider: React.FC = ({ children }) => {
 
    const signOut = useCallback(() => {
       localStorage.removeItem('@Github:profile')
+
+      setProfile({} as ProfileProps)
+
    }, [])
 
    return (

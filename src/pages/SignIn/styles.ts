@@ -13,11 +13,15 @@ export const Content = styled.div`
    justify-content: center;
 
    width: 100%;
-   max-width: 40%;
+   max-width: 50%;
 
    background: #f4f4f4;
    color: #0f0f0f;
 
+`;
+
+export const ProfilePhoto = styled.img`
+   width: 150px;
 `;
 
 export const WrapperContent = styled.div`
@@ -25,23 +29,31 @@ export const WrapperContent = styled.div`
    padding: 10px;
 
    input {
-       border: 1px solid #0f0f0f;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+
+       margin: 10px 0;
+       border: none;
        padding: 10px;
        border-radius: 10px;
-       margin: 5px;
-       height: 30px;
+       height: 40px;
+       width: 200px;
    }
 
    button {
        display: flex;
        align-items: center;
+       justify-content: center;
 
-       height: 30px;
+       width: 200px;
+       height: 40px;
        padding: 10px;
-       margin: 5px;
+       border: none;
        border-radius: 10px;
-       border: 1px solid #0f0f0f;
-       background: transparent;
+       background: var(--color-styles);
+       color: #f4f4f4;
+       font-weight: bold;
    }
 `;
 
@@ -53,6 +65,10 @@ export const Background = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media(max-width: 546px) {
+     display: none;
+  }
 `;
 
 export const BackgroundImage = styled.img`
