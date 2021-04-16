@@ -17,13 +17,13 @@ const Profile = () => {
         <S.Nav>
             <ul>
               <li>
-                <span> <FaAddressCard /> {profile.login} </span>
+                <span> <FaAddressCard style={{marginRight: 5}} /> {profile.login} </span>
               </li>
               <li>
-                <span> <FaLocationArrow /> {profile.location} </span>
+                <span> <FaLocationArrow style={{marginRight: 5}} /> {profile.location} </span>
               </li>
               <li>
-                <span> <FaBuilding /> {profile.company} </span>
+                <span> <FaBuilding style={{marginRight: 5}} /> {profile.company} </span>
               </li>
             </ul>
         </S.Nav>

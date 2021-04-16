@@ -26,7 +26,7 @@ export const Nav = styled.nav`
        justify-content: space-between;
        
        li {
-           margin: 10px 0;
+           margin: 10px 0px;
 
            span {
                font-size: 16px;

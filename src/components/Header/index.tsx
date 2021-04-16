@@ -45,13 +45,15 @@ const Header = () => {
     console.log(repo)
 
     return (
+      <>
         <S.Container>
             <form onSubmit={handleSubmit}>
-                 <input type="text" value={repository} onChange={(e) => setRepository(e.target.value)}  />
-                 <button type="submit" > pesquisar </button>
+                 <S.Input type="text" value={repository} onChange={(e) => setRepository(e.target.value)}  />
+                 <S.Button type="submit" > pesquisar </S.Button>
             </form>
             <S.Button  type="button" onClick={handleOut} > <FaPowerOff /> </S.Button>
         </S.Container>
+      </>
     )
 }
 
