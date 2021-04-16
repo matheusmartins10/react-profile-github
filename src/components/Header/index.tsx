@@ -53,6 +53,14 @@ const Header = () => {
             </form>
             <S.Button  type="button" onClick={handleOut} > <FaPowerOff /> </S.Button>
         </S.Container>
+        <ul>
+          {repo.map(repository => (
+            <li key={repository.id} >
+                <h3>  {repository.full_name} </h3>
+                <span>  {repository.description} </span>
+            </li>
+          ))}
+       </ul>
       </>
     )
 }
