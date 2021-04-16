@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { FaPowerOff } from 'react-icons/fa'
 
@@ -21,7 +21,19 @@ export type Repository = {
 const Header = () => {
 
     const [repository, setRepository] = useState('')
-    const [repo, setRepo] = useState<Repository[]>([])
+    const [repo, setRepo] = useState<Repository[]>(() => {
+      const storageRepo = localStorage.getItem('@Github:repo')
+
+      if(storageRepo) {
+        return JSON.parse(storageRepo)
+      }
+
+      return {} as Repository
+    })
+
+    useEffect(() => {
+        localStorage.setItem('@Github:repo', JSON.stringify(repo))
+    }, [repo])
 
     const history = useHistory()
 
@@ -41,8 +53,6 @@ const Header = () => {
          setRepo([...repo, repos])
          setRepository('')
     }
-
-    console.log(repo)
 
     return (
       <>
