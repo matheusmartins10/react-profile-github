@@ -12,7 +12,7 @@ const Profile = () => {
     <S.Profile key={profile.id} >
         <img src={profile.avatar_url} alt={profile.name}/>
         <h3> {profile.name} </h3>
-        <p> {profile.bio} </p>
+        {profile.bio ? <p> {profile.bio} </p> : <p> Nenhuma informacao </p>}
 
         <S.Nav>
             <ul>

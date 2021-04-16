@@ -1,10 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.aside`
-   background: var(--color-secondary);
-   position: fixed;
-   left: 0;
-   top: 0;
-   bottom: 0;
-   width: 25%;
+    background: #f4f4f4;
+    color: #0f0f0f;
+
+    width: 460px;
 `;
