@@ -8,7 +8,7 @@ import api from '../../services/api'
 
 import * as S from './styles'
 
-interface Repository {
+export type Repository = {
     id: number;
     full_name: string;
     description: string;
