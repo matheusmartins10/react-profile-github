@@ -12,6 +12,7 @@ export type Repository = {
     id: number;
     full_name: string;
     description: string;
+    html_url: string;
     owner: {
       login: string;
       avatar_url: string;
@@ -21,23 +22,10 @@ export type Repository = {
 const Header = () => {
 
     const [repository, setRepository] = useState('')
-    const [repo, setRepo] = useState<Repository[]>(() => {
-      const storageRepo = localStorage.getItem('@Github:repo')
-
-      if(storageRepo) {
-        return JSON.parse(storageRepo)
-      }
-
-      return {} as Repository
-    })
-
-    useEffect(() => {
-        localStorage.setItem('@Github:repo', JSON.stringify(repo))
-    }, [repo])
-
+    const [repo, setRepo] = useState<Repository[]>([])
     const history = useHistory()
 
-    const { profile, signOut } = useProfile()
+    const { signOut } = useProfile()
 
     const handleOut = () => {
        signOut()
@@ -58,19 +46,20 @@ const Header = () => {
       <>
         <S.Container>
             <form onSubmit={handleSubmit}>
-                 <S.Input type="text" value={repository} onChange={(e) => setRepository(e.target.value)}  />
+                 <S.Input type="text"  placeholder="Search for repository" value={repository} onChange={(e) => setRepository(e.target.value)}  />
                  <S.Button type="submit" > pesquisar </S.Button>
             </form>
             <S.Button  type="button" onClick={handleOut} > <FaPowerOff /> </S.Button>
         </S.Container>
-        <ul>
+        <S.Card>
           {repo.map(repository => (
-            <li key={repository.id} >
+            <S.CardContent key={repository.id} >
                 <h3>  {repository.full_name} </h3>
                 <span>  {repository.description} </span>
-            </li>
+                <a href={`${repository.html_url}`} target="_blank">  see with more details </a>
+            </S.CardContent>
           ))}
-       </ul>
+       </S.Card>
       </>
     )
 }

@@ -19,6 +19,10 @@ export const Button = styled.button`
        color: #f4f4f4;
        font-size: 18px;
    }
+
+   :first-child {
+      background: #f4f4f4;
+   }
 `;
 
 export const Input = styled.input`
@@ -28,4 +32,25 @@ export const Input = styled.input`
    padding: 10px;
    border-radius: 8px;
    border: none;
+`
+
+export const Card = styled.ul`
+`
+
+export const CardContent = styled.li`
+   margin: 20px;
+   width: 460px;
+   padding: 30px;
+   border-radius: 20px;
+   background: #fff;
+   color: #252525;
+
+   h3 {
+      margin-bottom: 10px;
+
+   }
+
+   a {
+      color: #ff2052;
+   }
 `

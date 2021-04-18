@@ -8,7 +8,3 @@ export default {
 }
 
 export const Default: Story = () => <Header  />
-
-Default.args = {
-    
-}

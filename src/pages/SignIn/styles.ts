@@ -15,7 +15,7 @@ export const Content = styled.div`
    width: 100%;
    max-width: 50%;
 
-   background: #f4f4f4;
+   background: #141f27;
    color: #0f0f0f;
 
 `;
@@ -38,7 +38,7 @@ export const WrapperContent = styled.div`
        padding: 10px;
        border-radius: 10px;
        height: 40px;
-       width: 200px;
+       width: 300px;
    }
 
    button {
@@ -46,7 +46,7 @@ export const WrapperContent = styled.div`
        align-items: center;
        justify-content: center;
 
-       width: 200px;
+       width: 300px;
        height: 40px;
        padding: 10px;
        border: none;
@@ -59,7 +59,7 @@ export const WrapperContent = styled.div`
 
 export const Background = styled.div`
   flex: 1;
-  background: var(--color-styles);
+  background: #1b384a;
   padding: 30px;
 
   display: flex;
@@ -75,5 +75,9 @@ export const BackgroundImage = styled.img`
   width: 460px;
 `;
 
-export const Text = styled.h3``;
+export const Text = styled.h3`
+  margin: 10px 0;
+  font-size: 36px;
+  color: #fff;
+`;
 
