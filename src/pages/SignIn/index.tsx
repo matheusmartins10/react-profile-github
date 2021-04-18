@@ -50,7 +50,7 @@ const SignIn = () => {
                <S.WrapperContent>
                    <form onSubmit={handleSubmit(onSubmit)} >
                      <input placeholder="type..." {...register('username')} onChange={e => setValue('username', e.target.value)} />
-                     <button type="submit" >Entrar</button>
+                     <button type="submit" >Sign In</button>
                    </form>
                </S.WrapperContent>
             </S.Content>

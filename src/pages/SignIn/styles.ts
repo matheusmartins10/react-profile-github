@@ -4,6 +4,11 @@ export const Container = styled.div`
    display: flex;
    align-items: stretch;
    height: 100vh;
+
+   @media(max-width: 546px) {
+      align-items: center;
+      justify-content: center;
+   }
 `;
 
 export const Content = styled.div`
@@ -11,6 +16,8 @@ export const Content = styled.div`
    flex-direction: column;
    align-items: center;
    justify-content: center;
+
+   text-align: center;
 
    width: 100%;
    max-width: 50%;
@@ -22,6 +29,15 @@ export const Content = styled.div`
 
 export const ProfilePhoto = styled.img`
    width: 150px;
+   position: relative;
+   animation: photo;
+   animation-duration: 2s;
+   animation-fill-mode: forwards;
+
+   @keyframes photo {
+     0% {top: -200px;}
+     100% {top: 0px;}
+   }
 `;
 
 export const WrapperContent = styled.div`
@@ -39,6 +55,16 @@ export const WrapperContent = styled.div`
        border-radius: 10px;
        height: 40px;
        width: 300px;
+
+       position: relative;
+       animation: input;
+       animation-duration: 3s;
+       animation-fill-mode: forwards;
+
+       @keyframes input {
+          0% {left: -200px;}
+          100% {left: 0px;}
+       }
    }
 
    button {
@@ -54,12 +80,28 @@ export const WrapperContent = styled.div`
        background: var(--color-styles);
        color: #f4f4f4;
        font-weight: bold;
+
+       position: relative;
+       animation: button;
+       animation-duration: 3s;
+       animation-delay: 2s;
+       opacity: 0;
+       animation-fill-mode: forwards;
+
+       :hover {
+          filter: brightness(80%);
+       }
+
+       @keyframes button {
+          0% { opacity: 0 ;}
+          100% {opacity: 1;}
+       }
    }
 `;
 
 export const Background = styled.div`
   flex: 1;
-  background: #1b384a;
+  background: var(--color-styles);
   padding: 30px;
 
   display: flex;
