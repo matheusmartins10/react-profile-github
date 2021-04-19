@@ -2,6 +2,9 @@
     Github Profile with React
 </h1>
 
+<p align="center">
+   <img alt="photo" src="./src/assets/photo1.png" />
+</p>
 
 ## :rocket: Technologies
 
